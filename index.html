@@ -11,7 +11,7 @@
     <div class="calculator">
         
           
-              <input class="display-box" type="text" id="screen" />
+              <input class="display-box" type="text" id="screen">
               <div class="row1">
               <button class="button">/</button>
               <button class="button">*</button>
@@ -47,6 +47,7 @@
             let temp = ''
             finalResult = ''
             let string = "";
+            let screenValue = ""
             let buttons = document.querySelectorAll('.button');
             Array.from(buttons).forEach((button)=>{
             button.addEventListener('click', (e)=>{
@@ -59,39 +60,40 @@
                 document.querySelector('input').value = string;
                 }
                 else if(e.target.innerHTML == '+'){
+                    screenValue = ""
                     temp = eval(string)
                     string = eval(string) + e.target.innerHTML;
                     document.querySelector('input').value = temp;
                     finalResult = string
 
-                   /* temp +=string;
-                    temp = temp + e.target.innerHTML;
-                    string = '';
-                    a=eval(temp.slice(0,-1));
-                    console.log(a);
-                    document.querySelector('input').value = a;*/
                 }
+
                 else if(e.target.innerHTML == '*'){
+                    screenValue = ""
                     temp = eval(string)
                     string = eval(string) + e.target.innerHTML;
                     document.querySelector('input').value = temp;
                     finalResult = string
                 }
                 else if(e.target.innerHTML == '-'){
+                    screenValue = ""
                     temp = eval(string)
                     string = eval(string) + e.target.innerHTML;
                     document.querySelector('input').value = temp;
                     finalResult = string
                 }
                 else if(e.target.innerHTML == '/'){
+                    screenValue = ""
                     temp = eval(string)
                     string = eval(string) + e.target.innerHTML;
                     document.querySelector('input').value = temp;
                     finalResult = string
                 }
                 else{ 
+                    
                 string = string + e.target.innerHTML;
-                document.querySelector('input').value = string;
+                screenValue = screenValue + e.target.innerHTML;
+                document.querySelector('input').value = screenValue;
                 console.log(string)
                
                 }
@@ -99,7 +101,7 @@
             })
             
             
-    
+            
 
 
     </script>

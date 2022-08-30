@@ -48,3 +48,7 @@ button{
 .row1{
     background-color:rgb(221, 34, 102);
 }
+input[type='text']:focus{
+    border:none;
+    outline:none;
+   }
