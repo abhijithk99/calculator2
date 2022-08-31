@@ -143,6 +143,9 @@
                 if(e.key == "*" || e.key == "Num*"){
                     operator('*')
                 }
+                if(e.key == "=" || e.key == "Num=" || e.key =="Enter"){
+                    equal()
+                }
                 
             }
             })
@@ -162,7 +165,10 @@
                     finalResult = string
             }
          
-
+            function equal(){
+                string = eval(string);
+                document.querySelector('input').value = eval(string);
+            }
     </script>
 </body>
 </html>
