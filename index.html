@@ -57,6 +57,8 @@
                 }
                 else if(e.target.innerHTML == 'DEL'){
                 string = ""
+                temp = ""
+                screenValue =""
                 document.querySelector('input').value = string;
                 }
                 else if(e.target.innerHTML == '+'){
@@ -98,11 +100,68 @@
                
                 }
             })
+            document.onkeyup = e =>{
+                if(e.key == "0" || e.key == "Num0"){
+                    press(0)
+                }
+                if(e.key == "1" || e.key == "Num1"){
+                    press(1)
+                }
+                if(e.key == "2" || e.key == "Num2"){
+                    press(2)
+                }
+                if(e.key == "3" || e.key == "Num3"){
+                    press(3)
+                }
+                if(e.key == "4" || e.key == "Num4"){
+                    press(4)
+                }
+                if(e.key == "5" || e.key == "Num5"){
+                    press(5)
+                }
+                if(e.key == "6" || e.key == "Num6"){
+                    press(6)
+                }
+                if(e.key == "7" || e.key == "Num7"){
+                    press(7)
+                }
+                if(e.key == "8" || e.key == "Num8"){
+                    press(8)
+                }
+                if(e.key == "9" || e.key == "Num9"){
+                    press(9)
+                }
+                if(e.key == "+" || e.key == "Num+"){
+                    operator('+')
+                }
+                if(e.key == "-" || e.key == "Num-"){
+                    operator('-')
+                }
+                if(e.key == "/" || e.key == "Num/"){
+                    operator('/')
+                }
+                if(e.key == "*" || e.key == "Num*"){
+                    operator('*')
+                }
+                
+            }
             })
-            
-            
-            
+            function press(keyValue){
+                string = string + keyValue;
+                screenValue = screenValue + keyValue;
+                document.querySelector('input').value = screenValue;
+                console.log(string)
+            }
 
+
+            function operator(operatorValue){
+                    screenValue = ""
+                    temp = eval(string)
+                    string = eval(string) + operatorValue;
+                    document.querySelector('input').value = temp;
+                    finalResult = string
+            }
+         
 
     </script>
 </body>
